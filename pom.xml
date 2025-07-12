@@ -32,7 +32,7 @@
     <springfox-swagger2.version>3.0.0</springfox-swagger2.version>
     <springfox-bean-validators.version>3.0.0</springfox-bean-validators.version>
     <springfox-swagger-ui.version>3.0.0</springfox-swagger-ui.version>
-    <commons-lang3.version>3.11</commons-lang3.version>
+    <commons-lang3.version>3.18.0</commons-lang3.version>
     <keycloak-spring-security-adapter.version>16.0.0</keycloak-spring-security-adapter.version>
     <keycloak-spring-boot-starter.version>16.0.0</keycloak-spring-boot-starter.version>
     <keycloak-admin-client.version>16.0.0</keycloak-admin-client.version>
