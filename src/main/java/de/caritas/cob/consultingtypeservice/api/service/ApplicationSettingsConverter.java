@@ -21,6 +21,8 @@ public class ApplicationSettingsConverter {
                 toFeatureToggleDTO(applicationSettings.getMultitenancyWithSingleDomainEnabled()))
             .multitenancyEnabled(toFeatureToggleDTO(applicationSettings.getMultitenancyEnabled()))
             .enableWalkthrough(toFeatureToggleDTO(applicationSettings.getEnableWalkthrough()))
+            .enableAdviceSeekerWalkThrough(
+                toFeatureToggleDTO(applicationSettings.getEnableAdviceSeekerWalkThrough()))
             .disableVideoAppointments(
                 toFeatureToggleDTO(applicationSettings.getDisableVideoAppointments()))
             .useTenantService(toFeatureToggleDTO(applicationSettings.getUseTenantService()))
