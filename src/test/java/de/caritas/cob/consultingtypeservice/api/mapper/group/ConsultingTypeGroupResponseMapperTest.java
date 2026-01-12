@@ -11,12 +11,12 @@ import de.caritas.cob.consultingtypeservice.testHelper.HelperMethods;
 import java.io.IOException;
 import java.util.List;
 import org.apache.commons.lang3.tuple.ImmutablePair;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class ConsultingTypeGroupResponseMapperTest {
+class ConsultingTypeGroupResponseMapperTest {
 
   @Test
-  public void mapConsultingType_Should_MapAllProperties() throws IOException {
+  void mapConsultingType_Should_MapAllProperties() throws IOException {
 
     List<ConsultingType> consultingTypeList = HelperMethods.getConsultingTypeList();
     ConsultingTypeGroupResponseDTO result =

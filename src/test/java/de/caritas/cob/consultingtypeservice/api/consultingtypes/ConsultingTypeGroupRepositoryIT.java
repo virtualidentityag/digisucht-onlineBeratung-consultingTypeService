@@ -7,30 +7,31 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.beans.HasPropertyWithValue.hasProperty;
 
+import de.caritas.cob.consultingtypeservice.ConsultingTypeServiceApplication;
 import de.caritas.cob.consultingtypeservice.schemas.model.ConsultingType;
+import de.caritas.cob.consultingtypeservice.testHelper.MongoTestInitializer;
 import java.util.List;
 import java.util.Map;
 import org.hamcrest.collection.IsMapContaining;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
-@AutoConfigureMockMvc(addFilters = false)
+@ContextConfiguration(
+    classes = ConsultingTypeServiceApplication.class,
+    initializers = MongoTestInitializer.class)
 @TestPropertySource(properties = "spring.profiles.active=testing")
-public class ConsultingTypeGroupRepositoryIT {
+class ConsultingTypeGroupRepositoryIT {
 
   @Autowired private ConsultingTypeLoader consultingTypeLoader;
 
   @Autowired private ConsultingTypeGroupRepository consultingTypeGroupRepository;
 
   @Test
-  public void getConsultingTypesGroupMap_Should_ReturnMapWithConsultingTypeGroups() {
+  void getConsultingTypesGroupMap_Should_ReturnMapWithConsultingTypeGroups() {
 
     Map<String, List<ConsultingType>> result =
         consultingTypeGroupRepository.getConsultingTypesGroupMap();
